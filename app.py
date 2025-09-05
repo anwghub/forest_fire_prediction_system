@@ -3,6 +3,101 @@ import pandas as pd
 import joblib 
 import numpy as np
 
+
+# Fire and Smoke Gradient Background
+st.markdown(
+    """
+    <style>
+    /* Background gradient for fire-theme */
+    .stApp {
+        background: linear-gradient(-45deg, #1c1c1c, #8B0000, #FF4500, #FFA500, #1c1c1c);
+        background-size: 500% 500%;
+        animation: gradientBG 20s ease infinite;
+        color: white;
+        font-size: 18px;
+    }
+
+    @keyframes gradientBG {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+
+    /* Title styling */
+    h1 {
+        font-size: 40px !important;
+        color: #FFD700;
+        margin-bottom: 20px;
+    }
+
+    /* Button styling */
+    .stButton > button {
+        background-color: #e25822;
+        color: white;
+        border: none;
+        padding: 0.5em 1em;
+        border-radius: 6px;
+        font-weight: bold;
+        font-size: 18px;
+    }
+
+    .stButton > button:hover {
+        background-color: #ff6600;
+        color: black;
+    }
+
+    /* Make X and Y inputs same style as month/day (dark transparent bg, white text) */
+    div.row-widget.stNumberInput:nth-child(1) input,
+    div.row-widget.stNumberInput:nth-child(2) input {
+        background-color: rgba(0, 0, 0, 0.6) !important;
+        color: white !important;
+        font-size: 18px !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        border-radius: 0 !important;
+        border: 1px solid white !important;
+    }
+
+    /* All other number, select and slider inputs */
+    .stNumberInput input,
+    .stSelectbox div[data-baseweb="select"],
+    .stTextInput input {
+        background-color: rgba(0, 0, 0, 0.6) !important;
+        color: white !important;
+        font-size: 18px !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        border-radius: 0 !important;
+        border: 1px solid white !important;
+    }
+
+    /* Sliders styling */
+    .stSlider > div > div {
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    input[type="range"] {
+        accent-color: black !important;
+    }
+
+    .stSlider {
+        background-color: transparent !important;
+        border: none !important;
+    }
+
+    /* Labels */
+    label, .stMarkdown {
+        font-size: 20px !important;
+    }
+
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
+
+
 #load model
 regressor = joblib.load('regressor.pkl')
 classifier = joblib.load('classifier.pkl')
